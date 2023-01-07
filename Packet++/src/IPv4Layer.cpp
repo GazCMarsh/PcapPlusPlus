@@ -367,6 +367,9 @@ void IPv4Layer::computeCalculateFields()
 		case IGMPv3:
 			ipHdr->protocol = PACKETPP_IPPROTO_IGMP;
 			break;
+		case SCTP:
+			ipHdr->protocol = PACKETPP_IPPROTO_SCTP;
+			break;
 		default:
 			break;
 		}

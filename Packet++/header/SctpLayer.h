@@ -42,9 +42,29 @@ namespace pcpp
         SctpLayer(uint8_t* data, size_t dataLen, Layer* prevLayer, Packet* packet);
 
         /**
+         * A constructor that allocates a new SCTP header with a source port, destination
+         * port and verification tag.
+         * @param[in] portSrc Source port
+         * @param[in] portDst Destination port
+         * @param[in] verificationTag Verification tag
+         */
+        SctpLayer(uint16_t portSrc, uint16_t portDst, uint32_t verificationTag);
+
+        /**
          * A constructor that allocates a new SCTP header
          */
         SctpLayer();
+
+        /**
+         * A copy constructor that copies the entire header from the other SctpLayer
+         */
+        SctpLayer(const SctpLayer& other);
+
+        /**
+         * An assignment operator that dirst deletes all data from the current layer
+         * and then copies the entire header from the other SctpLayer
+         */
+        SctpLayer& operator=(const SctpLayer& other);
 
         ~SctpLayer() {}
 
@@ -103,6 +123,10 @@ namespace pcpp
         std::string toString() const;
 
         OsiModelLayer getOsiModelLayer() const { return OsiModelTransportLayer; }
+    
+    private:
+        void initLayer();
+        void copyLayerData(const SctpLayer& other);
     };
 
     // implementation of inline methods

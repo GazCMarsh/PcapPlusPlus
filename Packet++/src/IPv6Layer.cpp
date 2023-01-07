@@ -301,6 +301,9 @@ void IPv6Layer::computeCalculateFields()
 		case GREv1:
 			nextHeader = PACKETPP_IPPROTO_GRE;
 			break;
+		case SCTP:
+			nextHeader = PACKETPP_IPPROTO_SCTP;
+			break;
 		default:
 			break;
 		}

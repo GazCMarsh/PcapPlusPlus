@@ -212,3 +212,4 @@ PTF_TEST_CASE(WakeOnLanEditTests);
 
 // Implemented in SctpTests.cpp
 PTF_TEST_CASE(SctpLayerParsingTest);
+PTF_TEST_CASE(SctpLayerCreationTest);

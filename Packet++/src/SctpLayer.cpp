@@ -3,8 +3,7 @@
 #include "EndianPortable.h"
 #include "SctpLayer.h"
 
-#include <iostream>
-#include <iomanip>
+#include <string.h>
 
 namespace pcpp
 {
@@ -17,8 +16,43 @@ SctpLayer::SctpLayer(uint8_t* data, size_t dataLen, Layer* prevLayer, Packet* pa
     m_Protocol = SCTP;
 }
 
+SctpLayer::SctpLayer(uint16_t portSrc, uint16_t portDst, uint32_t verificationTag)
+{
+    initLayer();
+    getSctpHeader()->portSrc = htobe16(portSrc);
+    getSctpHeader()->portDst = htobe16(portDst);
+    getSctpHeader()->verificationTag = htobe32(verificationTag);
+}
+
 SctpLayer::SctpLayer()
 {
+    initLayer();
+}
+
+SctpLayer::SctpLayer(const SctpLayer& other)
+{
+    copyLayerData(other);
+}
+
+SctpLayer& SctpLayer::operator=(const SctpLayer& other)
+{
+    Layer::operator=(other);
+    copyLayerData(other);
+    
+    return *this;
+}
+
+void SctpLayer::initLayer()
+{
+    m_DataLen = sizeof(sctphdr);
+    m_Data = new uint8_t[m_DataLen];
+    memset(m_Data, 0, m_DataLen);
+    m_Protocol = SCTP;
+}
+
+void SctpLayer::copyLayerData(const SctpLayer& other)
+{
+    // Placeholder for now - real work currently done by Layer
 }
 
 void SctpLayer::parseNextLayer()
