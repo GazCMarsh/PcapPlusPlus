@@ -209,3 +209,6 @@ PTF_TEST_CASE(SomeIpSdCreationTest);
 PTF_TEST_CASE(WakeOnLanParsingTests);
 PTF_TEST_CASE(WakeOnLanCreationTests);
 PTF_TEST_CASE(WakeOnLanEditTests);
+
+// Implemented in SctpTests.cpp
+PTF_TEST_CASE(SctpLayerParsingTest);

@@ -273,6 +273,7 @@ xcopy "$(PcapPlusPlusHome)\Packet++\header\*" "$(PcapPlusPlusHome)\Dist\header" 
     <ClCompile Include="..\..\Packet++\src\PPPoELayer.cpp" />
     <ClCompile Include="..\..\Packet++\src\RadiusLayer.cpp" />
     <ClCompile Include="..\..\Packet++\src\RawPacket.cpp" />
+    <ClCompile Include="..\..\Packet++\src\SctpLayer.cpp" />
     <ClCompile Include="..\..\Packet++\src\SipLayer.cpp" />
     <ClCompile Include="..\..\Packet++\src\SdpLayer.cpp" />
     <ClCompile Include="..\..\Packet++\src\SSHLayer.cpp" />

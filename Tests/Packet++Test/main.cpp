@@ -286,5 +286,7 @@ int main(int argc, char* argv[])
 	PTF_RUN_TEST(WakeOnLanCreationTests, "wol");
 	PTF_RUN_TEST(WakeOnLanEditTests, "wol");
 
+	PTF_RUN_TEST(SctpLayerParsingTest, "sctp");
+
 	PTF_END_RUNNING_TESTS;
 }

@@ -284,6 +284,9 @@
     <ClCompile Include="..\..\Packet++\src\RawPacket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Packet++\src\SctpLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Packet++\src\SipLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
