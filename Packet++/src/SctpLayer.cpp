@@ -15,12 +15,6 @@ namespace pcpp
 SctpLayer::SctpLayer(uint8_t* data, size_t dataLen, Layer* prevLayer, Packet* packet) : Layer(data, dataLen, prevLayer, packet)
 {
     m_Protocol = SCTP;
-    for ( size_t i = 0; i < dataLen; ++i ) {
-        std::cout << std::hex << std::setw(2) << std::setfill('0')
-            << (uint16_t)data[i]
-            << std::setfill('\0') << std::setw(0) << std::dec;
-    }
-    std::cout << std::endl;
 }
 
 SctpLayer::SctpLayer()
